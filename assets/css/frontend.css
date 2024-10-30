@@ -1,0 +1,390 @@
+/* phpcs:ignore */
+
+/*
+
+Z-index popover: 1199;
+Z-index Button: 1198;
+Z-index bg-full: 1197;
+Z-index tooltip: 1196;
+
+*/
+
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+/* Popover */
+
+.ipfl-chat-popup {
+  max-width: 380px;
+  width: 380px;
+  font-family: 'Inter', sans-serif !important;
+  display: none;
+  position: fixed;
+  bottom: 108px;
+  right: 24px;
+  z-index: 1199;
+  animation-name: ipfl-intro-chat-popup;
+  animation-duration: .5s;
+}
+
+.ipfl-form-container {
+  border: 1px solid #e6e6e4;
+  text-align: center;
+  height: 500px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+  -moz-box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+  box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+}
+
+#ipfl-myForm iframe {
+  width: 100% !important;
+  border-radius: 8px;
+}
+
+.ipfl-installed {
+  width: 70%;
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ipfl-installed svg {
+  fill: #3b5bfd;
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+#ipfl-fullpage-iframe {
+  background-color: #ffffff;
+}
+
+.ipfl-full-page-install {
+  width: 70%;
+  text-align: center;
+  font-size: 14px;
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.ipfl-full-page-install svg {
+  fill: #3b5bfd;
+  width: 32px;
+  height: 32px;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+@keyframes ipfl-intro-chat-popup {
+  from {
+    opacity: 0;
+    bottom: 0px;
+  }
+  to {
+    opacity: 1;
+    bottom: 108px;
+  }
+}
+
+/* Buttons */
+
+.ipfl-open-button {
+  background-color: #3b5bfd;
+  color: #ffffff;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: 0;
+  transition: background-color 0.5s ease;
+  z-index: 1198;
+}
+
+ipfl-open-button:hover {
+  background-color: #2840b8;
+  outline: 0;
+}
+
+.ipfl-open-button svg {
+  fill: #ffffff;
+  outline: 0;
+}
+
+.ipfl-close-button {
+  display: none;
+  background-color: #3b5bfd;
+  color: #ffffff;
+  padding: 16px 16px;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  outline: 0;
+  transition: background-color 0.5s ease;
+  z-index: 1198;
+}
+
+.ipfl-close-button:hover {
+  background-color: #2840b8;
+  outline: 0;
+}
+
+.ipfl-close-button svg {
+  fill: #ffffff;
+}
+
+/* Tooltip */
+
+.ipfl-tooltip-launcher .ipfl-tooltiptext {
+  font-family: 'Inter', sans-serif !important;
+  text-transform: capitalize !important;
+  font-size: 14px;
+  white-space: nowrap;
+  visibility: hidden;
+  position: absolute;
+  background-color: #000;
+  color: #fff;
+  text-align: right;
+  padding: 8px;
+  border-radius: 8px;
+  z-index: 1196;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.ipfl-tooltip-launcher:hover .ipfl-tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.ipfl-tooltip-left {
+  bottom: 16px;
+  right: 72px;
+}
+
+.ipfl-tooltip-left::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent transparent #000;
+}
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .ipfl-bg-full {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1197; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+
+  .ipfl-chat-popup {
+    position: fixed !important;
+    width: 95%;
+    height: 95%;
+    right: 2.5%;
+    bottom: 2.5%;
+    z-index: 1199;
+    animation-name: ipfl-intro-chat-popup-mobile;
+    animation-duration: .5s;
+  }
+
+  .ipfl-form-container {
+    text-align: center;
+    width: 100% !important;
+    height: 100% !important;
+    background-color: #ffffff;
+    border-radius: 8px 8px 8px 8px;
+    -webkit-box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+    -moz-box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+    box-shadow: 0px 8px 24px -8px rgba(0,0,0,0.51);
+  }
+
+  .ipfl-form-container iframe {
+    border-radius: 8px;
+  }
+
+  .ipfl-close-button {
+    position: fixed;
+    top: 1.5%;
+    right: 1.5%;
+    z-index: 1200;
+    display: none;
+    border: none;
+    cursor: pointer;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    outline: 0;
+    transition: background-color 0.5s ease;
+  }
+
+  .ipfl-close-button:hover {
+    background-color: #2840b8;
+  }
+
+  .ipfl-close-button svg {
+    fill: #ffffff;
+    position: absolute;
+    top:4px;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+  }
+}
+
+@keyframes ipfl-intro-chat-popup-mobile {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Full page experience */
+
+.ipfl-bg-full-page {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1194 !important;
+  background-color: #ffffff !important;
+  animation-name: full-page-animation;
+  animation-duration: .5s;
+}
+
+.ipfl-bg-full-page-empty {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1194 !important;
+  background-color: #ffffff !important;
+  animation-name: full-page-animation;
+  animation-duration: .5s;
+}
+
+.ipfl-chat-full-page {
+  font-family: 'Inter', sans-serif !important;
+  display: none;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1195;
+  width: 100%;
+  height: 100%;
+}
+
+ipfl-form-container-full-page {
+  text-align: center;
+}
+
+#ipfl-myForm-full iframe {
+  display: block;
+  overflow:hidden;
+  overflow-x:hidden;
+  overflow-y:hidden;
+  width:70% !important;
+  height:100% !important;
+  position:absolute;
+  top:0px;
+  left:0px;
+  right:0px;
+  bottom:0px;
+  margin: 0 auto;
+  animation-name: full-page-animation;
+  animation-duration: .5s;
+}
+
+@keyframes full-page-animation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .ipfl-bg-full-page {
+    background-color: rgb(0,0,0) !important; /* Fallback color */
+    background-color: rgba(0,0,0,0.4) !important; /* Black w/ opacity */
+  }
+  #ipfl-myForm-full iframe {
+    width:100% !important;
+    height: 100% !important;
+  }
+}
+
+.ipfl-close-button-fullpage {
+  background-color: #3b5bfd;
+  color: #ffffff;
+  position: fixed;
+  top: 1.5%;
+  right: 1.5%;
+  z-index: 1200;
+  display: none;
+  border: none;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  outline: 0;
+  transition: background-color 0.5s ease;
+}
+
+.ipfl-close-button-fullpage:hover {
+  background-color: #2840b8;
+}
+
+.ipfl-close-button-fullpage svg {
+  fill: #ffffff;
+  position: absolute;
+  top:4px;
+  left: 4px;
+  width: 24px;
+  height: 24px;
+}
